@@ -1,0 +1,48 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item" (click)="openWarframe()">
+    <a id="warframe-tab" class="nav-link active" href="#">Warframe</a>
+  </li>
+  <li class="nav-item" (click)="openMelee()">
+    <a id="melee-tab" class="nav-link" href="#">Melee</a>
+  </li>
+  <li class="nav-item" (click)="openPrimary()">
+    <a id="primary-tab" class="nav-link" href="#">Primary</a>
+  </li>
+  <li class="nav-item" (click)="openSecondary()">
+    <a id="secondary-tab" class="nav-link" href="#">Secondary</a>
+  </li>
+</ul>
+
+<div class="container light-gray">
+  <div class="row">
+    <div class="col-md-4">
+      <h1 class="font-20">Items</h1>
+      <hr>
+
+      <ul>
+        <li *ngFor="let i of items">
+          <input [(ngModel)]="i.value"  type="checkbox" (change)="modeResources()"> {{ i.name }}
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-8">
+      <h1 class="font-20">Resources</h1>
+      <hr>
+
+      <ul>
+        <li *ngFor="let i of resources">
+          <div class="row">
+            <div class="col-md">
+              {{ i.name }}
+            </div>
+            <div class="col-md">
+              {{ i.number }}
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
